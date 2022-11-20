@@ -182,7 +182,7 @@ custom_fonts/normal_font = SubResource( 7 )
 bbcode_enabled = true
 bbcode_text = "[center]Game Development Team[/center]"
 meta_underlined = false
-text = "Game Development Team"
+text = "[center]Game Development Team[/center]"
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
@@ -234,9 +234,9 @@ bbcode_text = "[img]res://Assets/Textures/bullet_1.png[/img]
 [img]res://Assets/Textures/bullet_1.png[/img]
 [img]res://Assets/Textures/bullet_1.png[/img]"
 meta_underlined = false
-text = "
-
-"
+text = "[img]res://Assets/Textures/bullet_1.png[/img]
+[img]res://Assets/Textures/bullet_1.png[/img]
+[img]res://Assets/Textures/bullet_1.png[/img]"
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
@@ -310,10 +310,10 @@ bbcode_text = "[img]res://Assets/Textures/bullet_0.png[/img]
 [img]res://Assets/Textures/bullet_0.png[/img]
 [img]res://Assets/Textures/bullet_0.png[/img]"
 meta_underlined = false
-text = "
-
-
-"
+text = "[img]res://Assets/Textures/bullet_0.png[/img]
+[img]res://Assets/Textures/bullet_0.png[/img]
+[img]res://Assets/Textures/bullet_0.png[/img]
+[img]res://Assets/Textures/bullet_0.png[/img]"
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
@@ -388,9 +388,9 @@ bbcode_text = "[img]res://Assets/Textures/bullet_2.png[/img]
 [img]res://Assets/Textures/bullet_2.png[/img]
 [img]res://Assets/Textures/bullet_2.png[/img]"
 meta_underlined = false
-text = "
-
-"
+text = "[img]res://Assets/Textures/bullet_2.png[/img]
+[img]res://Assets/Textures/bullet_2.png[/img]
+[img]res://Assets/Textures/bullet_2.png[/img]"
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
@@ -432,7 +432,7 @@ custom_fonts/normal_font = SubResource( 7 )
 bbcode_enabled = true
 bbcode_text = "[center]Software & Assets[/center]"
 meta_underlined = false
-text = "Software & Assets"
+text = "[center]Software & Assets[/center]"
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
@@ -486,11 +486,11 @@ bbcode_text = "[img]res://Assets/Textures/software_icon_godot.png[/img]
 [img]res://Assets/Textures/asset_icon_font.png[/img]
 [img]res://Assets/Textures/asset_icon_font.png[/img]"
 meta_underlined = false
-text = "
-
-
-
-"
+text = "[img]res://Assets/Textures/software_icon_godot.png[/img]
+[img]res://Assets/Textures/software_icon_aseprite.png[/img]
+[img]res://Assets/Textures/software_icon_DAWs_placeholder.png[/img]
+[img]res://Assets/Textures/asset_icon_font.png[/img]
+[img]res://Assets/Textures/asset_icon_font.png[/img]"
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
