@@ -1,15 +1,17 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Assets/Fonts/ITCKRIST.TTF" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/Textures/background.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Textures/credits_title.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/background.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/ITCKRIST.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Resources/Theme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Textures/flat_icon_clairebun.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Textures/flat_icon_winter.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Textures/flat_icon_deanabad.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Resources/Theme.tres" type="Theme" id=7]
-[ext_resource path="res://Assets/Textures/background_flat.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Textures/submenu_back_button.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Textures/flat_icon_software.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Textures/main_menu_tree_trunk.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/flat_icon_deanabad.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/flat_icon_software.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Textures/credits_title.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/submenu_back_button.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Textures/main_menu_grasses.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Textures/main_menu_leaves.png" type="Texture" id=12]
 
 [sub_resource type="Theme" id=2]
 
@@ -17,53 +19,53 @@
 size = 14
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
 use_mipmaps = true
 use_filter = true
 extra_spacing_bottom = -6
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 10
 use_mipmaps = true
 use_filter = true
 extra_spacing_top = 2
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 10
 use_mipmaps = true
 use_filter = true
 extra_spacing_top = 2
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 10
 use_mipmaps = true
 use_filter = true
 extra_spacing_top = 2
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 10
 use_mipmaps = true
 use_filter = true
 extra_spacing_bottom = 1
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 10 )
 region = Rect2( 0, 0, 43, 24 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 10 )
 region = Rect2( 86, 0, 43, 24 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 10 )
 region = Rect2( 43, 0, 43, 24 )
 
 [node name="Sky" type="ColorRect"]
@@ -73,30 +75,55 @@ mouse_filter = 2
 input_pass_on_modal_close_click = false
 color = Color( 0.25098, 0.2, 0.32549, 1 )
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="TreeTrunk" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 33.0
+margin_right = -178.0
 mouse_filter = 2
 input_pass_on_modal_close_click = false
-texture = ExtResource( 8 )
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 7
 
-[node name="Credits" type="NinePatchRect" parent="Background"]
+[node name="Grass" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 139.0
+mouse_filter = 2
+input_pass_on_modal_close_click = false
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 7
+
+[node name="TreeLeaves" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -16.0
+margin_bottom = -88.0
+mouse_filter = 2
+input_pass_on_modal_close_click = false
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 7
+
+[node name="Credits" type="NinePatchRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 input_pass_on_modal_close_click = false
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 patch_margin_left = 20
 patch_margin_top = 23
 patch_margin_right = 20
 patch_margin_bottom = 23
 
-[node name="Header&Contents" type="VBoxContainer" parent="Background/Credits"]
+[node name="Header&Contents" type="VBoxContainer" parent="Credits"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 input_pass_on_modal_close_click = false
 
-[node name="Header" type="MarginContainer" parent="Background/Credits/Header&Contents"]
+[node name="Header" type="MarginContainer" parent="Credits/Header&Contents"]
 margin_right = 256.0
 margin_bottom = 60.0
 mouse_filter = 2
@@ -104,16 +131,16 @@ input_pass_on_modal_close_click = false
 custom_constants/margin_top = 24
 custom_constants/margin_bottom = 4
 
-[node name="Title" type="TextureRect" parent="Background/Credits/Header&Contents/Header"]
+[node name="Title" type="TextureRect" parent="Credits/Header&Contents/Header"]
 margin_top = 24.0
 margin_right = 256.0
 margin_bottom = 56.0
 mouse_filter = 2
 input_pass_on_modal_close_click = false
-texture = ExtResource( 3 )
+texture = ExtResource( 9 )
 stretch_mode = 4
 
-[node name="Contents" type="MarginContainer" parent="Background/Credits/Header&Contents"]
+[node name="Contents" type="MarginContainer" parent="Credits/Header&Contents"]
 margin_top = 64.0
 margin_right = 256.0
 margin_bottom = 224.0
@@ -124,14 +151,14 @@ custom_constants/margin_right = 20
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 30
 
-[node name="Scroll" type="ScrollContainer" parent="Background/Credits/Header&Contents/Contents"]
+[node name="Scroll" type="ScrollContainer" parent="Credits/Header&Contents/Contents"]
 margin_left = 20.0
 margin_right = 236.0
 margin_bottom = 130.0
 size_flags_vertical = 3
-theme = ExtResource( 7 )
+theme = ExtResource( 3 )
 
-[node name="Items" type="VBoxContainer" parent="Background/Credits/Header&Contents/Contents/Scroll"]
+[node name="Items" type="VBoxContainer" parent="Credits/Header&Contents/Contents/Scroll"]
 margin_right = 208.0
 margin_bottom = 468.0
 mouse_filter = 2
@@ -139,14 +166,14 @@ input_pass_on_modal_close_click = false
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TeamTitle" type="MarginContainer" parent="Background/Credits/Header&Contents/Contents/Scroll/Items"]
+[node name="TeamTitle" type="MarginContainer" parent="Credits/Header&Contents/Contents/Scroll/Items"]
 margin_right = 208.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 0, 20 )
 mouse_filter = 2
 input_pass_on_modal_close_click = false
 
-[node name="Text" type="RichTextLabel" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/TeamTitle"]
+[node name="Text" type="RichTextLabel" parent="Credits/Header&Contents/Contents/Scroll/Items/TeamTitle"]
 margin_right = 208.0
 margin_bottom = 20.0
 size_flags_vertical = 3
@@ -159,21 +186,22 @@ text = "Game Development Team"
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
-[node name="Winter" type="HBoxContainer" parent="Background/Credits/Header&Contents/Contents/Scroll/Items"]
+[node name="Winter" type="HBoxContainer" parent="Credits/Header&Contents/Contents/Scroll/Items"]
 margin_top = 24.0
 margin_right = 208.0
 margin_bottom = 126.0
 mouse_filter = 2
 input_pass_on_modal_close_click = false
+alignment = 1
 
-[node name="FlatIcon" type="TextureRect" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/Winter"]
+[node name="FlatIcon" type="TextureRect" parent="Credits/Header&Contents/Contents/Scroll/Items/Winter"]
 margin_right = 102.0
 margin_bottom = 102.0
 mouse_filter = 2
 input_pass_on_modal_close_click = false
 texture = ExtResource( 5 )
 
-[node name="Roles" type="MarginContainer" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/Winter"]
+[node name="Roles" type="MarginContainer" parent="Credits/Header&Contents/Contents/Scroll/Items/Winter"]
 margin_left = 106.0
 margin_right = 208.0
 margin_bottom = 102.0
@@ -183,14 +211,15 @@ size_flags_horizontal = 3
 custom_constants/margin_top = 22
 custom_constants/margin_left = -14
 
-[node name="List" type="HBoxContainer" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/Winter/Roles"]
+[node name="List" type="HBoxContainer" parent="Credits/Header&Contents/Contents/Scroll/Items/Winter/Roles"]
 margin_left = -14.0
 margin_top = 22.0
 margin_right = 102.0
 margin_bottom = 102.0
 size_flags_horizontal = 3
+alignment = 1
 
-[node name="Bullets" type="RichTextLabel" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/Winter/Roles/List"]
+[node name="Bullets" type="RichTextLabel" parent="Credits/Header&Contents/Contents/Scroll/Items/Winter/Roles/List"]
 margin_right = 21.0
 margin_bottom = 80.0
 mouse_filter = 2
@@ -211,7 +240,7 @@ text = "
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
-[node name="Items" type="RichTextLabel" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/Winter/Roles/List"]
+[node name="Items" type="RichTextLabel" parent="Credits/Header&Contents/Contents/Scroll/Items/Winter/Roles/List"]
 margin_left = 25.0
 margin_right = 116.0
 margin_bottom = 80.0
@@ -232,21 +261,22 @@ Game Tester"
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
-[node name="ClaireBun" type="HBoxContainer" parent="Background/Credits/Header&Contents/Contents/Scroll/Items"]
+[node name="ClaireBun" type="HBoxContainer" parent="Credits/Header&Contents/Contents/Scroll/Items"]
 margin_top = 130.0
 margin_right = 208.0
 margin_bottom = 232.0
 mouse_filter = 2
 input_pass_on_modal_close_click = false
+alignment = 1
 
-[node name="FlatIcon" type="TextureRect" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/ClaireBun"]
+[node name="FlatIcon" type="TextureRect" parent="Credits/Header&Contents/Contents/Scroll/Items/ClaireBun"]
 margin_right = 102.0
 margin_bottom = 102.0
 mouse_filter = 2
 input_pass_on_modal_close_click = false
 texture = ExtResource( 4 )
 
-[node name="Roles" type="MarginContainer" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/ClaireBun"]
+[node name="Roles" type="MarginContainer" parent="Credits/Header&Contents/Contents/Scroll/Items/ClaireBun"]
 margin_left = 106.0
 margin_right = 208.0
 margin_bottom = 102.0
@@ -256,14 +286,15 @@ size_flags_horizontal = 3
 custom_constants/margin_top = 12
 custom_constants/margin_left = -14
 
-[node name="List" type="HBoxContainer" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/ClaireBun/Roles"]
+[node name="List" type="HBoxContainer" parent="Credits/Header&Contents/Contents/Scroll/Items/ClaireBun/Roles"]
 margin_left = -14.0
 margin_top = 12.0
 margin_right = 102.0
 margin_bottom = 102.0
 size_flags_horizontal = 3
+alignment = 1
 
-[node name="Bullets" type="RichTextLabel" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/ClaireBun/Roles/List"]
+[node name="Bullets" type="RichTextLabel" parent="Credits/Header&Contents/Contents/Scroll/Items/ClaireBun/Roles/List"]
 margin_right = 21.0
 margin_bottom = 90.0
 mouse_filter = 2
@@ -286,7 +317,7 @@ text = "
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
-[node name="Items" type="RichTextLabel" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/ClaireBun/Roles/List"]
+[node name="Items" type="RichTextLabel" parent="Credits/Header&Contents/Contents/Scroll/Items/ClaireBun/Roles/List"]
 margin_left = 25.0
 margin_right = 116.0
 margin_bottom = 90.0
@@ -309,21 +340,22 @@ Game Tester"
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
-[node name="DeanAbad" type="HBoxContainer" parent="Background/Credits/Header&Contents/Contents/Scroll/Items"]
+[node name="DeanAbad" type="HBoxContainer" parent="Credits/Header&Contents/Contents/Scroll/Items"]
 margin_top = 236.0
 margin_right = 208.0
 margin_bottom = 338.0
 mouse_filter = 2
 input_pass_on_modal_close_click = false
+alignment = 1
 
-[node name="FlatIcon" type="TextureRect" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/DeanAbad"]
+[node name="FlatIcon" type="TextureRect" parent="Credits/Header&Contents/Contents/Scroll/Items/DeanAbad"]
 margin_right = 102.0
 margin_bottom = 102.0
 mouse_filter = 2
 input_pass_on_modal_close_click = false
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
-[node name="Roles" type="MarginContainer" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/DeanAbad"]
+[node name="Roles" type="MarginContainer" parent="Credits/Header&Contents/Contents/Scroll/Items/DeanAbad"]
 margin_left = 106.0
 margin_right = 208.0
 margin_bottom = 102.0
@@ -333,14 +365,15 @@ size_flags_horizontal = 3
 custom_constants/margin_top = 22
 custom_constants/margin_left = -14
 
-[node name="List" type="HBoxContainer" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/DeanAbad/Roles"]
+[node name="List" type="HBoxContainer" parent="Credits/Header&Contents/Contents/Scroll/Items/DeanAbad/Roles"]
 margin_left = -14.0
 margin_top = 22.0
 margin_right = 102.0
 margin_bottom = 102.0
 size_flags_horizontal = 3
+alignment = 1
 
-[node name="Bullets" type="RichTextLabel" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/DeanAbad/Roles/List"]
+[node name="Bullets" type="RichTextLabel" parent="Credits/Header&Contents/Contents/Scroll/Items/DeanAbad/Roles/List"]
 margin_right = 21.0
 margin_bottom = 80.0
 mouse_filter = 2
@@ -361,7 +394,7 @@ text = "
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
-[node name="Items" type="RichTextLabel" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/DeanAbad/Roles/List"]
+[node name="Items" type="RichTextLabel" parent="Credits/Header&Contents/Contents/Scroll/Items/DeanAbad/Roles/List"]
 margin_left = 25.0
 margin_right = 116.0
 margin_bottom = 80.0
@@ -382,7 +415,7 @@ Game Tester"
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
-[node name="Software&Assets" type="MarginContainer" parent="Background/Credits/Header&Contents/Contents/Scroll/Items"]
+[node name="Software&Assets" type="MarginContainer" parent="Credits/Header&Contents/Contents/Scroll/Items"]
 margin_top = 342.0
 margin_right = 208.0
 margin_bottom = 362.0
@@ -390,7 +423,7 @@ rect_min_size = Vector2( 0, 20 )
 mouse_filter = 2
 input_pass_on_modal_close_click = false
 
-[node name="Text" type="RichTextLabel" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/Software&Assets"]
+[node name="Text" type="RichTextLabel" parent="Credits/Header&Contents/Contents/Scroll/Items/Software&Assets"]
 margin_right = 208.0
 margin_bottom = 20.0
 size_flags_vertical = 3
@@ -403,21 +436,22 @@ text = "Software & Assets"
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
-[node name="Software" type="HBoxContainer" parent="Background/Credits/Header&Contents/Contents/Scroll/Items"]
+[node name="Software" type="HBoxContainer" parent="Credits/Header&Contents/Contents/Scroll/Items"]
 margin_top = 366.0
 margin_right = 208.0
 margin_bottom = 468.0
 mouse_filter = 2
 input_pass_on_modal_close_click = false
+alignment = 1
 
-[node name="FlatIcon" type="TextureRect" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/Software"]
+[node name="FlatIcon" type="TextureRect" parent="Credits/Header&Contents/Contents/Scroll/Items/Software"]
 margin_right = 102.0
 margin_bottom = 102.0
 mouse_filter = 2
 input_pass_on_modal_close_click = false
-texture = ExtResource( 10 )
+texture = ExtResource( 8 )
 
-[node name="Names" type="MarginContainer" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/Software"]
+[node name="Names" type="MarginContainer" parent="Credits/Header&Contents/Contents/Scroll/Items/Software"]
 margin_left = 106.0
 margin_right = 208.0
 margin_bottom = 102.0
@@ -427,14 +461,15 @@ size_flags_horizontal = 3
 custom_constants/margin_top = 12
 custom_constants/margin_left = -14
 
-[node name="List" type="HBoxContainer" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/Software/Names"]
+[node name="List" type="HBoxContainer" parent="Credits/Header&Contents/Contents/Scroll/Items/Software/Names"]
 margin_left = -14.0
 margin_top = 12.0
 margin_right = 102.0
 margin_bottom = 102.0
 size_flags_horizontal = 3
+alignment = 1
 
-[node name="Bullets" type="RichTextLabel" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/Software/Names/List"]
+[node name="Bullets" type="RichTextLabel" parent="Credits/Header&Contents/Contents/Scroll/Items/Software/Names/List"]
 margin_right = 21.0
 margin_bottom = 90.0
 mouse_filter = 2
@@ -459,7 +494,7 @@ text = "
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 
-[node name="Items" type="RichTextLabel" parent="Background/Credits/Header&Contents/Contents/Scroll/Items/Software/Names/List"]
+[node name="Items" type="RichTextLabel" parent="Credits/Header&Contents/Contents/Scroll/Items/Software/Names/List"]
 margin_left = 25.0
 margin_right = 116.0
 margin_bottom = 90.0
